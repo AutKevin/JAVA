@@ -25,8 +25,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 /**
  * 名 称：GZIPFilter.java 描 述： 作 者：邱 宇 时 间：2017年8月16日
  * -------------------------------------------------- 修改历史 序号 日期 修改人 修改原因 1

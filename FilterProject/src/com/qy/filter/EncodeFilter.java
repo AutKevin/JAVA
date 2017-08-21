@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.jstl.core.Config;
 
-import org.apache.catalina.connector.Request;
-
-import sun.misc.CharacterEncoder;
 
 public class EncodeFilter implements Filter {
     FilterConfig config = null;
