@@ -1,0 +1,18 @@
+<!--
+把该文件放在web项目根目录,执行ant即可.该文件用utf-8格式编码.
+-->
+    <!--basedir指的是当前所在文件夹-->
+<project name="projectName" default="core" basedir=".">
+    <!--定义tomcat所在目录-->
+    <property name="webapp" value="D:/Programmer_QY/apache-tomcat-forever7/webapps/ProjectName" />
+    <target name="core">
+        <!--删除原来部署的文件-->
+        <delete dir="${webapp}"></delete>
+        <!--新建文件夹-->
+        <mkdir dir="${webapp}" />
+        <!--将编译后的文件拷贝到tomcat目录下-->
+        <copy todir="${webapp}" overwrite="true">
+            <fileset dir="${basedir}/WebRoot"/>
+        </copy>
+    </target>
+</project>

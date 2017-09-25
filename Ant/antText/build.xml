@@ -1,0 +1,80 @@
+<?xml version="1.0"?>  
+<project name="HelloWorld" default="jar" basedir="">  
+	
+	  <!--自定义property-->
+    <target name="test-property">  
+        <property name="name" value="zhangsan" />  
+        <property name="age" value="25" />  
+        <echo message="this is target test2." />  
+        <echo message="java version: ${ant.java.version}" />  
+        <echo message="project name: ${ant.project.name}" />  
+        <echo message="ant file: ${ant.file}" />  
+        <echo message="name = ${name}, age = ${age}" />  
+    </target>  
+    
+	  <!--复制文件-->
+    <target name="test-copy">  
+        <copy file="test.txt" tofile="build/test.txt" />  
+    </target> 
+    
+	  <!--复制文件夹-->
+    <target name="test-copy-dir">  
+        <copy todir="build/dest_dir">  
+            <fileset dir="origin_dir" />  
+        </copy>  
+    </target>  
+    
+    <!-- 删除单个文件 -->  
+    <target name="test-del-file">  
+        <delete file="test.txt" />  
+    </target>  
+    
+    <!-- 删除整个目录 -->  
+    <target name="test-del-dir">  
+        <delete dir="origin_dir" />  
+    </target> 
+    
+    <!-- 创建目录 -->  
+    <target name="test-mkdir">
+        <mkdir dir="test" />  
+    </target>
+    
+    <!-- 编译java -->
+    <target name="test-compile">
+        <javac srcdir="src" destdir="build/classes/" />
+    </target>
+    
+    <!-- 执行java -->
+    <target name="test-run-java">  
+        <java classname="Test">  
+            <classpath>  
+                <pathelement path="build/classes" />  
+            </classpath>  
+        </java>  
+    </target>  
+    
+    <!-- 打包 -->
+    <target name="jar">  
+        <jar destfile="add.jar" basedir="build/classes/">  
+            <manifest>  
+                <attribute name="Main-class" value="Add" />  
+            </manifest>  
+        </jar>  
+    </target>  
+    
+    
+    <!--创建依赖-->
+    <!--创建目录-->  
+    <target name="mkdir">  
+        <mkdir dir="build/dest" />  
+    </target>  
+    <!--拷贝文件-->  
+    <target name="copy-file" depends="mkdir">  
+        <copy file="test.txt" tofile="build/dest/test.txt" />  
+    </target>  
+    <!--删除文件-->  
+    <target name="delete-file" depends="copy-file">  
+        <delete file="test.txt" />  
+    </target> 
+    
+</project>  
