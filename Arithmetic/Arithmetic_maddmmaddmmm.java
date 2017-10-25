@@ -1,13 +1,23 @@
 import java.util.*;
+import java.io.*;
 public class Arithmetic_maddmmaddmmm{
     
 	//题目：求s=a+aa+aaa+aaaa+aa...a的值，其中a是一个数字。例如2+22+222+2222+22222(此时共有5个数相加)，几个数相加有键盘控制。
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+			/*Scanner in = new Scanner(System.in);
         	System.out.println("请输入数值:");
         	int num = in.nextInt();
         	System.out.println("请输入次数:");
         	int count = in.nextInt();
+			countNum(num,count);*/
+			
+			BufferedReader stadin = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("请输入数值:");
+			String input =stadin.readLine();
+			int num = Integer.valueOf(input);
+			System.out.println("请输入次数:");
+			String countString =stadin.readLine();
+			int count = Integer.valueOf(countString);
         	countNum(num,count);
 	}
 	
