@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>WebProjectForWebService</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>	
+  <!-- 通过servlet部署 -->	
+  <servlet>	
+      <servlet-name>InitServlet</servlet-name>  
+      <servlet-class>com.qy.servlet.TestServlet</servlet-class>  
+      <init-param>  
+          <param-name>username</param-name>  
+          <param-value>qy</param-value>  
+      </init-param>  
+      <!-- 此处指定加载顺序为2,表明还有优先级更高的Servlet要先执行   -->
+      <load-on-startup>1</load-on-startup>  
+  </servlet>  
+  <servlet-mapping>	
+      <servlet-name>InitServlet</servlet-name>  
+      <url-pattern>/</url-pattern>  
+  </servlet-mapping>	
+  <listener>  
+      <listener-class>com.qy.servletcontextlistener.contextlistener</listener-class>  
+  </listener> 
+</web-app>
