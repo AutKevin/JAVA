@@ -72,6 +72,29 @@ public class PropUtil {
 		String value = properties.getProperty(key);
 		return value;
 	}
+	/**
+	 * 根据配置文件的url和properties的key值获取value
+	 * @param key
+	 * @return
+	 */
+	public static String getPro(URL url,String key){
+		Properties properties = new Properties();
+		File file = null;
+		try {
+			file = new File(url.toURI());
+			if (file!=null) {
+				FileInputStream fis = new FileInputStream(file);
+				properties.load(fis);
+			}
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return properties.getProperty(key,"该url未在webServiceURL.properties洪配置"); //如果该key未定义返回默认值
+	}
 	
 	public String getFileName() {
 		return fileName;
