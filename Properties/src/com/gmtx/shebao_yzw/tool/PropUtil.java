@@ -93,7 +93,7 @@ public class PropUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return properties.getProperty(key,"该url未在webServiceURL.properties洪配置");
+		return properties.getProperty(key,"该url未在webServiceURL.properties洪配置"); //如果该key未定义返回默认值
 	}
 	
 	public String getFileName() {
