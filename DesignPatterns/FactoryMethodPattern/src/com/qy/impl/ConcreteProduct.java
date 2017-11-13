@@ -1,4 +1,4 @@
-package com.qy.impl;
+﻿package com.qy.impl;
 
 import com.qy.intf.Product;
 
@@ -11,6 +11,7 @@ public class ConcreteProduct implements Product {
 	public void method1() {
 		System.out.println("this is methodone by class"+this.getClass().getName());
 	}
+
 	@Override
 	public void method2() {
 		System.out.println("this is methodtwo by class"+this.getClass().getName());
