@@ -20,26 +20,33 @@ public class Arithmetic_weekOfDay {
 		ls.add("Friday");
 		ls.add("Saturday");
 		ls.add("Sunday");
+		String input = "";
 		do {
 			String day = sc.next();
-			System.out.println("输入:" + day);
-			int index = -1;
-			int count = 0;
+			input+=day;
+			System.out.println("输入:" + input);
+			//存储周几的index
+			List<Integer> indexList= new ArrayList<Integer>();
 			for (int i = 0; i < ls.size(); i++) {
-				Pattern p = Pattern.compile("^" + day.toLowerCase());
+				Pattern p = Pattern.compile("^" + input.toLowerCase());
 				Matcher m = p.matcher(ls.get(i).toLowerCase());
 				boolean b = m.find(); // 是否找到以输入值开头的
 				if (b) {
-					index = i;
-					count++;
+					indexList.add(i);
 				}
 			}
-			if (count > 1) {
-				System.out.println("输入字母不足以判断是周几,请重新输入...");
-			} else if (count == 1) {
-				System.out.println("输入的为:" + ls.get(index));
+			if (indexList.size() > 1) {
+				System.out.println("您输入的可能是:");
+				for (int i = 0; i < indexList.size(); i++) {
+					System.out.println(ls.get(indexList.get(i)));
+				}
+				System.out.println("请输入下一个字母");
+			} else if (indexList.size() == 1) {
+				System.out.println("输入的为:" + ls.get(indexList.get(0)));
+				input = "";
 			} else {
 				System.out.println("识别不了您输入的是周几");
+				input = "";
 			}
 		} while (true);
 	}
