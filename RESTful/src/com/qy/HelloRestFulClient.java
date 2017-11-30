@@ -1,6 +1,17 @@
 package com.qy;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import javax.ws.rs.core.MediaType;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -11,32 +22,32 @@ import com.sun.jersey.api.client.config.DefaultClientConfig;
  * 调用接口
  */
 public class HelloRestFulClient {
-	public static final String BASE_URI = "http://localhost:8080/RESTful";
+	public static final String BASE_URI = "http://127.0.0.1:8080/RESTful";
 	public static final String PATH_Hello = "/userService/hello/";
 	public static final String PATH_Bye = "/userService/bye/";
-	 
-	public static void main(String[] args) {
 	//参数
-	String name = "qy";
-	
-	//创建请求对象
-	ClientConfig config = new DefaultClientConfig();
-	Client client = Client.create(config);
-	WebResource resource = client.resource(BASE_URI);    //具体项目的WebResource
-	//路径
-	WebResource helloResource = resource.path("rest").path(PATH_Hello + name);  
-	System.out.println("Client Response 返回状态");
-	getClientResponse(helloResource);
-	System.out.println("Response 返回 xml" );
-	getResponse(helloResource);
-	System.out.println("----------------------------------------------------");
-	WebResource byeResource = resource.path("rest").path(PATH_Bye + name);
-	System.out.println("Client Response 返回状态");
-	getClientResponse(byeResource);
-	System.out.println("Response 返回 xml" );
-	getResponse(byeResource);
-	}
+	static String paramName = "qy";
 	 
+	public static void main(String[] args) throws IOException, URISyntaxException {
+
+		/*//创建请求对象
+		ClientConfig config = new DefaultClientConfig();
+		Client client = Client.create(config);
+		WebResource resource = client.resource(BASE_URI);    //具体项目的WebResource
+		//路径
+		WebResource helloResource = resource.path("rest").path(PATH_Hello + paramName);  
+		System.out.println("Client Response 返回状态");
+		getClientResponse(helloResource);
+		System.out.println("Response 返回 xml" );
+		getResponse(helloResource);
+		System.out.println("----------------------------------------------------");
+		WebResource byeResource = resource.path("rest").path(PATH_Bye + paramName);
+		System.out.println("Client Response 返回状态");
+		getClientResponse(byeResource);
+		System.out.println("Response 返回 xml" );
+		getResponse(byeResource);*/
+	}
+	
 	/**
 	* 调用WebResource,返回客户端请求状态。
 	* GET http://localhost:8080/RESTful/rest/userService/hello/qiuyu
@@ -59,4 +70,5 @@ public class HelloRestFulClient {
 		System.out.println(responseString);
 		return responseString;
 	}
+	
 }
