@@ -203,7 +203,7 @@ public class CreateEntity {
 			}else {
 				System.out.print("表     "+tableName+"   的entity实体已存在于:");
 			}
-			pw = new PrintWriter(file);
+			pw = new PrintWriter(new OutputStreamWriter(new FileOutputStream(filePath), "utf-8"));
 			bw = new BufferedWriter(pw);
 			bw.write(content);
 		} catch (IOException e) {
