@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+  <servlet>
+    <description>支付</description>
+    <display-name>支付页面</display-name>
+    <servlet-name>Pay</servlet-name>
+    <servlet-class>com.autumn.servlet.Pay</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Pay</servlet-name>
+    <url-pattern>/autumn/Pay</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>交易查询</description>
+    <display-name>交易查询页面</display-name>
+    <servlet-name>Query</servlet-name>
+    <servlet-class>com.autumn.servlet.Query</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Query</servlet-name>
+    <url-pattern>/autumn/Query</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>退款</description>
+    <display-name>退款</display-name>
+    <servlet-name>Refund</servlet-name>
+    <servlet-class>com.autumn.servlet.Refund</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Refund</servlet-name>
+    <url-pattern>/autumn/Refund</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>退款查询</description>
+    <display-name>退款查询</display-name>
+    <servlet-name>RefundQuery</servlet-name>
+    <servlet-class>com.autumn.servlet.RefundQuery</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RefundQuery</servlet-name>
+    <url-pattern>/autumn/RefundQuery</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>关闭</description>
+    <display-name>关闭</display-name>
+    <servlet-name>Close</servlet-name>
+    <servlet-class>com.autumn.servlet.Close</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Close</servlet-name>
+    <url-pattern>/autumn/Close</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>同步通知</description>
+    <display-name>同步通知</display-name>
+    <servlet-name>Return</servlet-name>
+    <servlet-class>com.autumn.servlet.Return</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Return</servlet-name>
+    <url-pattern>/autumn/Return</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>异步通知</description>
+    <display-name>异步通知</display-name>
+    <servlet-name>Notify</servlet-name>
+    <servlet-class>com.autumn.servlet.Notify</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Notify</servlet-name>
+    <url-pattern>/autumn/Notify</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Alipay_web_interface"
+  id="myeclipse.1530848789801"
+  context-root="/Alipay_web_interface"
+  j2ee-spec="5.0"
+  archive="Alipay_web_interface.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
