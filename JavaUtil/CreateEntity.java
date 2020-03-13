@@ -32,9 +32,9 @@ public class CreateEntity {
     
     private String authorName = "邱宇";    //作者名字
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost:3306/protocol";
-	private static final String NAME = "qy";
-	private static final String PASS = "199526";
+	private static final String URL = "jdbc:mysql://localhost:3306/depo";
+	private static final String NAME = "root";
+	private static final String PASS = "root";
 	
 	private boolean f_util = false;  // 是否需要导入包java.util.*
 	private boolean f_sql = false;  // 是否需要导入包java.sql.*
